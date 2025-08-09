@@ -1,4 +1,13 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
@@ -21,14 +30,17 @@ export const Header = () => {
           </a>
         </nav>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">
-            Creator
-          </Button>
-          <Link href="/auth/register">
-            <Button variant="default" size="lg">
-              Get Started
-            </Button>
-          </Link>
+          <ClerkLoading>Loading...</ClerkLoading>
+          <ClerkLoaded>
+            <SignedIn>
+              <UserButton/>
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <Button size="lg" variant="ghost">Login</Button>
+              </SignInButton>
+            </SignedOut>
+          </ClerkLoaded>
         </div>
       </div>
     </header>
