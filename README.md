@@ -1,7 +1,7 @@
 # SDGP-Project-Repository
 
 A fullstack web development project:
-E-learning platform where learners can self-learn Web development and update their skills,
+E-learning platform where learners can self-learn Programming languages and update their skills,
 Earn certifiacations
 And create technical blogs and show case their knowledge
 A gameroom is being developed (On progress) where instructers also can join nd create their quiz game and the Students can join and play the game and be ranked
