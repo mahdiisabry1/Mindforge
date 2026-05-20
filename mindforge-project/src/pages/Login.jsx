@@ -113,7 +113,17 @@ const Login = () => {
           <div className="text-center text-white text-2xl font-bold animate-fade-in">
             This site is currently offline.<br />
     Access has been restricted due to scheduled updates, security enhancements, or administrative actions.<br />
-    Please revisit us soon. 
+    Please visit the  below link. 
+            <div className="flex items-center justify-center p-6 rounded-xl border shadow-sm bg-white">
+              <a
+                href="http://ec2-13-53-174-4.eu-north-1.compute.amazonaws.com:3000/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-lg bg-black px-5 py-3 text-white font-medium transition hover:opacity-90"
+              >
+                Upgraded
+              </a>
+          </div>
           </div>
         </div>
       )}
