@@ -1,0 +1,34 @@
+name: CI/CD for mindforge
+
+on:
+  push:
+    branches:
+      - Production
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up .env mongoDB
+        run: echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env && echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
+      - name: Build and push
+        run: docker build -t integrationninjas/mindforge . 
+      - name: Login to Docker hun
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: publish image to the Docker hub
+        run: docker push integrationninjas/mindforge:latest
+
+deploy:
+  needs: build
+  runs-on: self-hosted
+  steps:
+    - name: Pull image from docker
+      run:  docker pull integrationninjas/mindforge:latest
+    - name: Stop and remove old container
+      run: docker rm -f mindforge-container
+    - name: Run Docker container
+      run: docker run -d -p 3000:3000 --name mindforge-container integrationninjas/mindforge        
+
