@@ -24,7 +24,7 @@ export const Header = () => {
         </nav>
         <div className="flex items-center gap-2">
           <Button className="bg-blue-600 text-white hover:bg-blue-700">
-            Creator
+            Admin
           </Button>
           <SignedIn>
             <UserButton />
