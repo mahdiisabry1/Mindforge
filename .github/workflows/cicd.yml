@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Clerk Publishable key
+        run: echo "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}" >> .env
+      - name: Clerk Setup
+        run: echo "CLERK_SECRET_KEY=${{ secrets.CLERK_SECRET_KEY }}" >> .env
       - name: Set up .env mongoDB
         run: echo "MONGODB_URL=${{ secrets.MONGODB_URL }}" >> .env && echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
       - name: Build and push
