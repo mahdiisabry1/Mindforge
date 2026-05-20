@@ -6,7 +6,7 @@ import { URL } from "../url"; // Import URL from a separate file
 import { useContext } from "react"; // Import useContext hook from React
 import { UserContext } from "../context/UserContext"; // Import UserContext for accessing user data
 import Menu from "../components/Menu"; // Import Menu component
-import Disclaimer from "../components/Disclaimer"; // Import Disclaimer component
+import Disclaimer from "../components/Disclaimer"; 
 
 // Define the Login component
 const Login = () => {
