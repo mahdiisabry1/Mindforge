@@ -20,6 +20,7 @@ export default function Home() {
           <h1 className="text-xl lg:text-3xl font-bold text-black max-w-[480px] text-center">
             Welcome to MindForge! Learn, Practice, and Empower your Learning
             with Mindforge
+            <span><h6>Account creation is currently disabled for security.</h6></span>
           </h1>
           <div>
               <ClerkLoading>Loading...</ClerkLoading>
