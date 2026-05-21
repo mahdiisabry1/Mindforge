@@ -29,10 +29,15 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull image from docker
-        run:  docker pull mahdisabry/mindforge:latest
-      - name: Stop and remove old container
-        run: docker rm -f mindforge-container
-      - name: Run Docker container
-        run: docker run -d -p 3000:3000 --name mindforge-container mahdisabry/mindforge        
+    - name: Cleanup Docker (safe)
+      run: |
+        docker container prune -f
+        docker image prune -af
+        docker volume prune -f
+    - name: Pull image from docker
+      run:  docker pull mahdisabry/mindforge:latest
+    - name: Stop and remove old container
+      run: docker rm -f mindforge-container
+    - name: Run Docker container
+      run: docker run -d -p 3000:3000 --name mindforge-container mahdisabry/mindforge        
 
