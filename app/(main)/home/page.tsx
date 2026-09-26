@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 
-const LearnPage = () => {
+
+const HomePage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold mb-4">Learn with MindForge</h1>
@@ -27,4 +28,4 @@ const LearnPage = () => {
   );
 };
 
-export default LearnPage;
+export default HomePage;

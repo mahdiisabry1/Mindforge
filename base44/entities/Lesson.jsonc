@@ -1,0 +1,72 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "language_id": {
+      "type": "string",
+      "description": "ID of the programming language"
+    },
+    "unit_number": {
+      "type": "number",
+      "description": "Unit this lesson belongs to"
+    },
+    "unit_title": {
+      "type": "string"
+    },
+    "lesson_number": {
+      "type": "number",
+      "description": "Order within the unit"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "xp_reward": {
+      "type": "number",
+      "default": 10
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "multiple_choice",
+              "fill_blank",
+              "true_false",
+              "code_order"
+            ]
+          },
+          "question": {
+            "type": "string"
+          },
+          "code_snippet": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_answer": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "language_id",
+    "unit_number",
+    "lesson_number",
+    "title"
+  ]
+}

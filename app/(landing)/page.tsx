@@ -19,8 +19,8 @@ export default function Home() {
         <div className="flex flex-col items-center gap-y-10">
           <h1 className="text-xl lg:text-3xl font-bold text-black max-w-[480px] text-center">
             Welcome to MindForge! Learn, Practice, and Empower your Learning
-            with Mindforge
-            <h6 className="text-sm">Account creation is currently disabled for security.</h6>
+            with Mindforge <br />
+            <span className="text-sm">Account creation is currently disabled for security.</span>
           </h1>
           <div>
               <ClerkLoading>Loading...</ClerkLoading>
@@ -37,7 +37,7 @@ export default function Home() {
                   </SignUpButton>
                 </SignedOut>
                 <SignedIn>
-                  <Link href="/learn" target="_blank">
+                  <Link href="/home" target="_blank">
                     <Button className="w-full lg:w-auto" variant="default" size="lg">
                       Continue Learning
                     </Button>
