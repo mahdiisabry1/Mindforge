@@ -6,7 +6,10 @@ COPY package*.json ./
 RUN npm install --production
 
 COPY . .
+ENV NEXT_DISABLE_ESLINT=1 
 RUN npm run build
+
+RUN npm prune --production
 
 EXPOSE 3000
 
