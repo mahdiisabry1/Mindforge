@@ -3,8 +3,8 @@ import { Zap, Target, Heart, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function StatsBar({ xp = 0, level = 1, hearts = 5, rank = '--' }) {
-  const xpForNext = level * 100;
-  const progress = Math.min((xp % 100) / 100, 1);
+  // const xpForNext = level * 100;
+  // const progress = Math.min((xp % 100) / 100, 1);
 
   return (
     <motion.div
