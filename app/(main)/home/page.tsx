@@ -12,9 +12,9 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// import Learn from "@/pages/Home";
+import Learn from "@/pages/Home";
 import Languages from "@/pages/Languages";
-import LessonPath from "@/components/dashboard/LessonPath";
+// import LessonPath from "@/components/dashboard/LessonPath";
 
 type TabContentProps = {
   icon: LucideIcon;
@@ -33,7 +33,7 @@ const TabPlaceholder = ({ icon: Icon, title, description }: TabContentProps) => 
 );
 
 const navItems = [
-  { path: "/home", icon: Home, label: "Learn", Content: LessonPath },
+  { path: "/home", icon: Home, label: "Learn", Content: Learn },
   {
     path: "/languages",
     icon: BookOpen,

@@ -16,6 +16,12 @@ interface ProgrammingLanguage {
   total_lessons: number;
 }
 
+interface Lesson {
+  _id: string;
+  unit_number: number;
+  lesson_number: number;
+}
+
 interface UserProgress {
   id: string;
   user_id: string;
@@ -49,9 +55,10 @@ export default function Languages() {
       try {
         const response = await fetch('/api/languages');
         const data = await response.json();
-        setLanguages(data);
+        const languagesArray = Array.isArray(data) ? data : [];
+        setLanguages(languagesArray);
         
-        const savedProgress = data.map((lang: ProgrammingLanguage) => {
+        const savedProgress = languagesArray.map((lang: ProgrammingLanguage) => {
           const saved = localStorage.getItem(`progress_${lang._id}`);
           return saved ? JSON.parse(saved) : null;
         }).filter(Boolean);
@@ -88,10 +95,27 @@ export default function Languages() {
         };
         setUserProgress([...userProgress, newProgress]);
         localStorage.setItem(`progress_${lang._id}`, JSON.stringify(newProgress));
+        router.push('/');
+      } else {
+        // Fetch lessons for this language to find the current lesson
+        const lessonsResponse = await fetch(`/api/lessons/${lang._id}`);
+        if (lessonsResponse.ok) {
+          const lessons = await lessonsResponse.json();
+          const currentLesson = lessons.find(
+            (l: Lesson) => l.unit_number === existing.current_unit && l.lesson_number === existing.current_lesson
+          );
+          if (currentLesson) {
+            router.push(`/lesson/${currentLesson._id}`);
+          } else {
+            router.push('/');
+          }
+        } else {
+          router.push('/');
+        }
       }
-      router.push('/');
     } catch (e) {
       console.error(e);
+      router.push('/');
     } finally {
       setStarting(null);
     }
