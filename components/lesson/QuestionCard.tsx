@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 interface QuestionCardProps {
   question: {
-    type: 'true_false' | 'multiple_choice' | 'fill_blank' | 'code_order';
+    type: 'true_false' | 'multiple_choice' | 'fill_blank';
     question: string;
     code_snippet?: string;
     options?: string[];
