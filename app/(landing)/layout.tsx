@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
@@ -11,8 +10,7 @@ const LandingLayout = ({ children }: Props) => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 ">
       {/* Header area */}
       <Header />
-      <main className="flex-1 flex flex-col items-center justify-center w-full">
-        <Image src="/background.jpg" fill alt="landing" className="opacity-15"/>
+      <main className="relative flex-1 flex flex-col items-center justify-center w-full">
         {children}
       </main>
       {/* Footer area */}

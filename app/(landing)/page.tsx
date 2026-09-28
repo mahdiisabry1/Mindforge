@@ -14,7 +14,7 @@ export default function Home() {
     <div className="z-[100]">
       <div className="max-w-[1100px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 gap-12">
         <div className="relative w-[240px] h-[240px] lg:w-[1100px] lg:h-[424px] mb-8 lg:mb-0">
-          <Image src="/pngegg.png" fill alt="landing" />
+          <Image src="/pngegg.png" fill alt="landing" sizes="(max-width: 768px) 240px, 1100px" loading="eager" />
         </div>
         <div className="flex flex-col items-center gap-y-10">
           <h1 className="text-xl lg:text-3xl font-bold text-black max-w-[480px] text-center">
