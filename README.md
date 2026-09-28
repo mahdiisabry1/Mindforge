@@ -1,6 +1,9 @@
 # MindForge
 
 **MindForge** is a gamified coding learning platform built with Next.js. Users sign in with Clerk, pick a course, follow a lesson path, and earn XP and streaks as they complete challenges.
+<img width="1916" height="887" alt="Screenshot from 2026-09-29 01-55-26" src="https://github.com/user-attachments/assets/a768a82e-9b97-431c-9b26-01a6058acf1e" />
+<img width="1916" height="887" alt="Screenshot from 2026-09-29 01-56-37" src="https://github.com/user-attachments/assets/e41ba032-663a-4e3e-b9f0-618b6d4b1a18" />
+<img width="1916" height="887" alt="Screenshot from 2026-09-29 01-56-47" src="https://github.com/user-attachments/assets/fbc54c03-3f71-46f9-bb86-c2c7409ee757" />
 
 ---
 
